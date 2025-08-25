@@ -1,26 +1,80 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #fef6dd;
+	--forground: white;
+
+	--primary-100: #d1d1cd;
+	--primary-200: #7f6f3e;
+	--primary-300: #ccc0c0;
+
+	--secondary-100: #b7a261;
+	--secondary-200: #685d5d;
+	--secondary-300: #f9f6ea;
+	--secondary-400: #e0ce93;
+	--secondary-500: #fdf4f4;
+	--secondary-600: #7f6f3e;
+	--secondary-700: #c2b293;
+	--secondary-800: #3b3729;
+	--secondary-900: #a89d9d;
+
+	--tertiary-100: #7f6f3e;
+	--tertiary-200: #272522;
+	--tertiary-300: #4b3d10;
+	--tertiary-400: #3b3729;
+	--tertiary-500: #60594b;
+	--tertiary-600: #625839;
+
+	--neutral-100: #000000;
+	--neutral-200: #ffffff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--color-background: var(--background);
+	--color-forground: var(--forground);
+
+	--color-primary-100: var(--primary-100);
+	--color-primary-200: var(--primary-200);
+	--color-primary-300: var(--primary-300);
+
+	--color-secondary-100: var(--secondary-100);
+	--color-secondary-200: var(--secondary-200);
+	--color-secondary-300: var(--secondary-300);
+	--color-secondary-400: var(--secondary-400);
+	--color-secondary-500: var(--secondary-500);
+	--color-secondary-600: var(--secondary-600);
+	--color-secondary-700: var(--secondary-700);
+	--color-secondary-800: var(--secondary-800);
+	--color-secondary-900: var(--secondary-900);
+
+	--color-tertiary: var(--tertiary-100);
+	--color-tertiary-200: var(--tertiary-200);
+	--color-tertiary-300: var(--tertiary-300);
+	--color-tertiary-400: var(--tertiary-400);
+	--color-tertiary-500: var(--tertiary-500);
+	--color-tertiary-600: var(--tertiary-600);
+
+	--color-neutral-100: var(--neutral-100);
+	--color-neutral-200: var(--neutral-200);
+
+	--text-1sm: 13px;
+	--text-2.5xl: 26px;
+	--text-2.6xl: 28px;
+
+	--font-poppins: var(--font-poppins), sans-serif;
+	--font-inter: var(--font-inter);
+	--font-merri-waether-sans: var(--font-merri-weather-sans);
+	--font-sigma-one: var(--font-sigma-one);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #131312;
+		--forground: #ffffff;
+	}
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--background);
+	color: var(--foreground);
 }
