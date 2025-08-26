@@ -51,7 +51,7 @@ export default function RootLayout({
 				<Header />
 				<main className="flex gap-12 max-w-11/12 mx-auto mb-12">
 					<Profile />
-					<section className="flex-1">{children}</section>
+					<section className="flex-1 wrapper px-8 py-7">{children}</section>
 					<NavBar />
 				</main>
 			</body>

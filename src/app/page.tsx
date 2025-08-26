@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 export default function Home() {
 	return (
-		<section className="bg-neutral-100 text-neutral-200 border-3 border-tertiary-300 rounded-xl px-8 py-7 font-poppins [&_span]:font-bold">
-			<h2 className="font-bold text-2.6xl">About</h2>
-			<article className="mt-3 flex flex-col gap-6 text-justify">
+		<section className="">
+			<h2 className="font-bold text-2.6xl mb-3 text-tertiary-700">About</h2>
+			<article className="flex flex-col gap-6 text-justify">
 				<p>
 					I am a <span>Frontend Developer</span> with over 3 years of experience building scalable,
 					responsive, and user-centric web applications using{' '}
@@ -39,7 +39,7 @@ export default function Home() {
 					apps for real-world use cases.
 				</p>
 			</article>
-			<h2 className="font-bold text-2.6xl capitalize mt-6">What i do</h2>
+			<h2 className="font-bold text-2.6xl capitalize mt-6 text-tertiary-700">What i do</h2>
 			<div className="grid grid-cols-2 gap-8 mt-4">
 				<div className="bg-tertiary-500 border-3 border-tertiary-600 rounded-lg overflow-hidden flex gap-5">
 					<Image src="/images/frontend.png" alt="frontend" width={116} height={179} />

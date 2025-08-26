@@ -24,6 +24,7 @@
 	--tertiary-400: #3b3729;
 	--tertiary-500: #60594b;
 	--tertiary-600: #625839;
+	--tertiary-700: #fdfaf0;
 
 	--neutral-100: #000000;
 	--neutral-200: #ffffff;
@@ -53,6 +54,7 @@
 	--color-tertiary-400: var(--tertiary-400);
 	--color-tertiary-500: var(--tertiary-500);
 	--color-tertiary-600: var(--tertiary-600);
+	--color-tertiary-700: var(--tertiary-700);
 
 	--color-neutral-100: var(--neutral-100);
 	--color-neutral-200: var(--neutral-200);
@@ -71,6 +73,12 @@
 	:root {
 		--background: #131312;
 		--forground: #ffffff;
+	}
+}
+
+@layer components {
+	.wrapper {
+		@apply bg-neutral-100 text-neutral-200 border-3 border-tertiary-300 rounded-xl font-poppins [&_span]:font-bold;
 	}
 }
 
