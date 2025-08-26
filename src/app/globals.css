@@ -25,6 +25,7 @@
 	--tertiary-500: #60594b;
 	--tertiary-600: #625839;
 	--tertiary-700: #fdfaf0;
+	--tertiary-800: #403d32;
 
 	--neutral-100: #000000;
 	--neutral-200: #ffffff;
@@ -55,6 +56,7 @@
 	--color-tertiary-500: var(--tertiary-500);
 	--color-tertiary-600: var(--tertiary-600);
 	--color-tertiary-700: var(--tertiary-700);
+	--color-tertiary-800: var(--tertiary-800);
 
 	--color-neutral-100: var(--neutral-100);
 	--color-neutral-200: var(--neutral-200);

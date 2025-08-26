@@ -49,7 +49,7 @@ export default function RootLayout({
 				className={`${sigmaOne.variable} ${poppins.variable} ${inter.variable} ${merriWeatherSans.variable} antialiased bg-background`}
 			>
 				<Header />
-				<main className="flex gap-12 max-w-11/12 mx-auto mb-12">
+				<main className="flex gap-12 max-w-[82vw] mx-auto mb-12">
 					<Profile />
 					<section className="flex-1 wrapper px-8 py-7">{children}</section>
 					<NavBar />
