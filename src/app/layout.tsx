@@ -33,8 +33,6 @@ export const sigmaOne = Sigmar_One({
 	weight: ['400'],
 });
 
-import type { Metadata } from 'next';
-
 export const metadata: Metadata = {
 	title: 'Moshood | Frontend Developer',
 	description:
