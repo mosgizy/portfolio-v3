@@ -42,7 +42,7 @@ export default function Home() {
 			<h2 className="font-bold text-2.6xl capitalize mt-6 text-tertiary-700">What i do</h2>
 			<div className="grid grid-cols-2 gap-8 mt-4">
 				<div className="bg-tertiary-500 border-3 border-tertiary-600 rounded-lg overflow-hidden flex gap-5">
-					<Image src="/images/frontend.png" alt="frontend" width={116} height={179} />
+					<Image src="/images/frontend.png" alt="frontend" width={116} height={311} />
 					<div className="py-4">
 						<h3 className="font-inter font-bold text-neutral-200">Web Front-End Development</h3>
 						<p className="font-medium text-1sm text-primary-100 mt-3">
@@ -52,7 +52,13 @@ export default function Home() {
 					</div>
 				</div>
 				<div className="bg-tertiary-500 border-3 border-tertiary-600 rounded-lg overflow-hidden flex gap-5">
-					<Image src="/images/mobile.png" alt="frontend" width={116} height={179} />
+					<Image
+						src="/images/mobile.png"
+						alt="React Native"
+						aria-label="React Native"
+						width={116}
+						height={311}
+					/>
 					<div className="py-4">
 						<h3 className="font-inter font-bold text-neutral-200">React-Native App Development</h3>
 						<p className="font-medium text-1sm text-primary-100 mt-3">

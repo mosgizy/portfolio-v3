@@ -18,10 +18,18 @@ const Profile = () => {
 					</div>
 					<div className="flex items-center justify-center gap-4 mt-6">
 						<Image src="/icons/instagram.png" alt="" width={34} height={34} />
-						<Link href={'https://www.github.com/mosgizy'} target="_blank">
+						<Link
+							href={'https://www.github.com/mosgizy'}
+							aria-label="github profile"
+							target="_blank"
+						>
 							<Image src="/icons/github.png" alt="" width={34} height={34} />
 						</Link>
-						<Link href={'https://www.linkedin.com/in/hasterisk'} target="_blank">
+						<Link
+							href={'https://www.linkedin.com/in/hasterisk'}
+							aria-label="linkedin profile"
+							target="_blank"
+						>
 							<Image src="/icons/linkedin.png" alt="" width={34} height={34} />
 						</Link>
 					</div>
