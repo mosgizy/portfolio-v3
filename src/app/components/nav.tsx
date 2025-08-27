@@ -57,7 +57,13 @@ const NavBar = () => {
 						} px-2 py-2 flex flex-col gap-1 items-center rounded-sm`}
 					>
 						<FontAwesomeIcon icon={info.icon} className="text-2xl" />
-						<span className="text-xs font-medium mt-1">{info.title}</span>
+						<span
+							className={`${
+								pathname === info.route && 'font-bold'
+							} text-xs font-medium mt-1 capitalize`}
+						>
+							{info.title}
+						</span>
 					</Link>
 				);
 			})}
