@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 		title: 'Moshood | Frontend Developer Portfolio',
 		description:
 			'Portfolio of Moshood Odugbesan - Frontend Developer skilled in React, Next.js, TailwindCSS, and modern JavaScript frameworks.',
-		url: 'https://your-portfolio-domain.com', // Replace with your actual domain
+		url: 'https://moshood-ope.vercel.app/',
 		siteName: 'Moshood Portfolio',
 		images: [
 			{
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
 		shortcut: '/pwa-icons/icon-16x16.png',
 		apple: '/pwa-icons/icon-180x180.png',
 	},
-	manifest: '/site.webmanifest',
+	manifest: './manifest.ts',
 	themeColor: '#625839',
 };
 
