@@ -21,7 +21,7 @@ const Profile = () => {
 	return (
 		<div
 			className={` ${
-				hamburger ? 'translate-x-0' : '-translate-x-[600px] md:-translate-x-[800px]'
+				hamburger ? 'translate-x-0' : '-translate-x-full'
 			} absolute z-40 top-12 lg:top-0 inset-0 lg:bg-none lg:relative font-inter lg:translate-x-0 transition delay-150 duration-200 ease-in-out`}
 		>
 			<aside className="mt-26 relative">
