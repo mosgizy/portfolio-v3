@@ -13,11 +13,11 @@ const Profile = () => {
 	return (
 		<div
 			className={` ${
-				hamburger ? 'translate-x-0' : '-translate-x-[600px]'
-			} absolute top-12 md:top-0 inset-0 lg:bg-none lg:relative font-inter md:translate-x-0 transition delay-150 duration-200 ease-in-out`}
+				hamburger ? 'translate-x-0' : '-translate-x-[600px] md:-translate-x-[800px]'
+			} absolute top-12 lg:top-0 inset-0 lg:bg-none lg:relative font-inter lg:translate-x-0 transition delay-150 duration-200 ease-in-out`}
 		>
 			<aside className="mt-26 relative">
-				<div className="max-w-[90%] mx-auto md:max-w-full bg-neutral-100 border-3 border-tertiary-300 rounded-xl p-8">
+				<div className="max-w-[90%] mx-auto lg:max-w-full bg-neutral-100 border-3 border-tertiary-300 rounded-xl p-8">
 					<div className="flex justify-center absolute -top-16 w-full left-0">
 						<Image src="/images/avatar.png" alt="avatar" width={200} height={200} />
 					</div>

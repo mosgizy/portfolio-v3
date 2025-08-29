@@ -11,7 +11,7 @@ const Header = () => {
 	return (
 		<header className="flex items-center justify-between py-6 px-4 lg:py-12 w-full lg:max-w-[65%] mx-auto">
 			<div className="text-primary-200 text-2xl lg:text-[38px] flex gap-4 items-center">
-				<div className="md:hidden">
+				<div className="lg:hidden">
 					<FontAwesomeIcon
 						onClick={() => setHamburger()}
 						icon={hamburger ? faXmark : faHamburger}

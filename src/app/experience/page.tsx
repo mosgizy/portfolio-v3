@@ -30,7 +30,7 @@ const Experience = () => {
 	return (
 		<section className="text-tertiary-700">
 			<h2 className="font-bold text-2.6xl mb-3">Experience</h2>
-			<div className="flex flex-col gap-6 text-base md:text-lg mt-2">
+			<div className="flex flex-col gap-6 text-base lg:text-lg mt-2">
 				{experiences.map((exp, index) => {
 					const { company, image, role, duration, link } = exp;
 					return (

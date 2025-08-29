@@ -47,7 +47,7 @@ const Skills = () => {
 	return (
 		<section className="text-neutral-200">
 			<h2 className="font-bold text-2.6xl mb-3">Skills</h2>
-			<div className="grid grid-cols-3 md:flex gap-7 flex-wrap mt-7 md:px-6">
+			<div className="grid grid-cols-3 md:flex gap-7 flex-wrap mt-7 lg:px-6">
 				{skills.map((skill, index) => {
 					const { image, title } = skill;
 					return (
@@ -61,7 +61,7 @@ const Skills = () => {
 				})}
 			</div>
 			<h2 className="font-bold text-2.6xl mb-3 mt-10">Tools & Software</h2>
-			<div className="grid grid-cols-3 md:flex gap-7 flex-wrap mt-7 md:px-6">
+			<div className="grid grid-cols-3 md:flex gap-7 flex-wrap mt-7 lg:px-6">
 				{tools.map((tool, index) => {
 					const { image, title } = tool;
 					return (

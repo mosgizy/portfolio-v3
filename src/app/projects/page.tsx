@@ -21,7 +21,7 @@ const Projects = () => {
 			link: 'https://photography-rust.vercel.app/',
 		},
 		{
-			image: '/images/fabulous.jpg',
+			image: '/images/fabulous.png',
 			title: 'laundry service',
 			link: 'https://fabulous-laundry.vercel.app/',
 		},
@@ -35,7 +35,7 @@ const Projects = () => {
 	return (
 		<section>
 			<h2 className="font-bold text-2.6xl mb-3">Projects</h2>
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 -gap-y-12 md:px-9">
+			<div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-12 lg:-gap-y-12 lg:px-9">
 				{projects.map((project, index) => {
 					const { link, image, title } = project;
 					return (
@@ -43,7 +43,7 @@ const Projects = () => {
 							href={link}
 							key={index}
 							target="_blank"
-							className="relative bg-tertiary-800 max-h-max border-[1.5px] border-tertiary-300 px-5 pt-5 pb-2 rounded-lg"
+							className="block relative bg-tertiary-800 max-h-max border-[1.5px] border-tertiary-300 px-5 pt-5 pb-2 rounded-lg"
 						>
 							<Image
 								src={image}
