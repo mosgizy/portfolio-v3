@@ -5,16 +5,24 @@ import { faEnvelope, faLocationArrow, faMobile } from '@fortawesome/free-solid-s
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Profile = () => {
 	const { hamburger } = useStore();
+
+	useEffect(() => {
+		if (hamburger) {
+			document.body.classList.add('no-scroll');
+		} else {
+			document.body.classList.remove('no-scroll');
+		}
+	}, [hamburger]);
 
 	return (
 		<div
 			className={` ${
 				hamburger ? 'translate-x-0' : '-translate-x-[600px] md:-translate-x-[800px]'
-			} absolute top-12 lg:top-0 inset-0 lg:bg-none lg:relative font-inter lg:translate-x-0 transition delay-150 duration-200 ease-in-out`}
+			} absolute z-40 top-12 lg:top-0 inset-0 lg:bg-none lg:relative font-inter lg:translate-x-0 transition delay-150 duration-200 ease-in-out`}
 		>
 			<aside className="mt-26 relative">
 				<div className="max-w-[90%] mx-auto lg:max-w-full bg-neutral-100 border-3 border-tertiary-300 rounded-xl p-8">
