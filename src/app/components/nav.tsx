@@ -1,5 +1,6 @@
 'use client';
 
+import { useStore } from '@/store/store';
 import {
 	faContactBook,
 	faLaptopCode,
@@ -12,61 +13,68 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
+const navInfo = [
+	{
+		title: 'about',
+		icon: faUser,
+		route: '/',
+	},
+	{
+		title: 'experience',
+		icon: faNewspaper,
+		route: '/experience',
+	},
+	{
+		title: 'projects',
+		icon: faLaptopCode,
+		route: '/projects',
+	},
+	{
+		title: 'skills',
+		icon: faPenNib,
+		route: '/skills',
+	},
+	{
+		title: 'contact',
+		icon: faContactBook,
+		route: '/contact',
+	},
+];
+
 const NavBar = () => {
 	const pathname = usePathname();
-
-	const navInfo = [
-		{
-			title: 'about',
-			icon: faUser,
-			route: '/',
-		},
-		{
-			title: 'experience',
-			icon: faNewspaper,
-			route: '/experience',
-		},
-		{
-			title: 'projects',
-			icon: faLaptopCode,
-			route: '/projects',
-		},
-		{
-			title: 'skills',
-			icon: faPenNib,
-			route: '/skills',
-		},
-		{
-			title: 'contact',
-			icon: faContactBook,
-			route: '/contact',
-		},
-	];
+	const { setHamburger } = useStore();
 
 	return (
-		<nav className="font-poppins bg-neutral-100 border-3 border-tertiary-300 rounded-xl max-h-max mt-36 px-6 py-7 flex flex-col gap-5">
-			{navInfo.map((info) => {
-				return (
-					<Link
-						key={info.title}
-						href={info.route}
-						className={`${
-							pathname === info.route
-								? 'bg-secondary-100 text-neutral-100'
-								: 'bg-secondary-800 text-secondary-900'
-						} px-2 py-2 flex flex-col gap-1 items-center rounded-sm`}
-					>
-						<FontAwesomeIcon icon={info.icon} className="text-2xl" />
-						<span
-							className={`${
-								pathname === info.route && 'font-bold'
-							} text-xs font-medium mt-1 capitalize`}
-						>
-							{info.title}
-						</span>
-					</Link>
-				);
-			})}
+		<nav className="fixed bottom-0 left-0 md:relative font-poppins">
+			<ul
+				className={`bg-neutral-100 border-3 border-tertiary-300 rounded-t-4xl md:rounded-xl max-h-max lg:mt-36 px-4 py-6 md:px-6 md:py-7 grid grid-cols-5 md:grid-cols-1 gap-3 md:gap-5`}
+			>
+				{navInfo.map((info) => {
+					return (
+						<li key={info.title}>
+							<Link
+								href={info.route}
+								onClick={() => setHamburger(false)}
+								className={`${
+									pathname === info.route
+										? 'bg-secondary-100 text-neutral-100'
+										: 'bg-secondary-800 text-secondary-900'
+								} px-2 py-2 flex flex-col gap-1 items-center rounded-sm`}
+							>
+								<FontAwesomeIcon icon={info.icon} className="text-2xl" />
+								<span
+									className={`${
+										pathname === info.route && 'font-bold'
+									} text-xs font-medium mt-1 capitalize`}
+								>
+									{info.title}
+								</span>
+							</Link>
+						</li>
+					);
+				})}
+			</ul>
 		</nav>
 	);
 };

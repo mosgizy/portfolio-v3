@@ -35,7 +35,7 @@ const Projects = () => {
 	return (
 		<section>
 			<h2 className="font-bold text-2.6xl mb-3">Projects</h2>
-			<div className="grid grid-cols-2 gap-x-12 -gap-y-12 px-9">
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 -gap-y-12 md:px-9">
 				{projects.map((project, index) => {
 					const { link, image, title } = project;
 					return (
