@@ -23,8 +23,8 @@ const Header = () => {
 	}, []);
 
 	return (
-		<header className="flex items-center justify-between py-6 px-4 lg:py-12 w-full lg:max-w-[65%] mx-auto">
-			<div className="text-primary-200 text-2xl lg:text-[38px] flex gap-4 items-center">
+		<header className="flex items-center justify-between text-primary-200 text-2xl lg:text-[38px] py-6 px-4 lg:py-12 w-full lg:max-w-[65%] mx-auto">
+			<div className="flex gap-4 items-center">
 				<div className="lg:hidden">
 					<FontAwesomeIcon
 						onClick={() => setHamburger()}
@@ -34,7 +34,7 @@ const Header = () => {
 				</div>
 				<div
 					ref={boxRef}
-					className="relative flex justify-center items-center w-[300px] h-[70px] overflow-hidden"
+					className="hidden relative lg:flex justify-center items-center w-[300px] h-[70px] overflow-hidden"
 				>
 					<h1
 						ref={textRef}
@@ -71,8 +71,9 @@ const Header = () => {
 					</h1>
 				</div>
 			</div>
+			<h1 className="font-sigma-one lg:hidden">Asterisk</h1>
 			<div className="w-[40px] h-[40px] lg:w-[59px] lg:h-[59px] rounded-full bg-secondary-100 flex justify-center items-center cursor-pointer">
-				<FontAwesomeIcon icon={faMoon} className="text-xl lg:text-3xl" />
+				<FontAwesomeIcon icon={faMoon} className="text-xl lg:text-3xl text-neutral-100" />
 			</div>
 		</header>
 	);

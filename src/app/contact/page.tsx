@@ -70,7 +70,7 @@ const Contact = () => {
 
 	return (
 		<Wrapper>
-			<>
+			<section>
 				<h2 className="font-bold text-2.6xl mb-3 capitalize">Contact Me</h2>
 				<form onSubmit={handleSubmit} className="flex flex-col gap-6 mt-12">
 					<label htmlFor="name" className="flex flex-col gap-1">
@@ -131,7 +131,7 @@ const Contact = () => {
 						</button>
 					</div>
 				</form>
-			</>
+			</section>
 		</Wrapper>
 	);
 };
