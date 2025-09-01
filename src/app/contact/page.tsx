@@ -2,6 +2,7 @@
 
 import React, { ChangeEvent, FormEvent, useCallback, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Wrapper from '../components/wrapper';
 
 const Contact = () => {
 	const [form, setForm] = useState({
@@ -68,68 +69,70 @@ const Contact = () => {
 	}, [form]);
 
 	return (
-		<section>
-			<h2 className="font-bold text-2.6xl mb-3 capitalize">Contact Me</h2>
-			<form onSubmit={handleSubmit} className="flex flex-col gap-6 mt-12">
-				<label htmlFor="name" className="flex flex-col gap-1">
-					<span className="font-medium text-xl capitalize">name</span>
-					<input
-						type="text"
-						id="name"
-						name="name"
-						value={form.name}
-						autoComplete="off"
-						onChange={handleInput}
-						className="!bg-neutral-100 border border-tertiary-900 text-neutral-200 rounded-lg px-5 py-3 outline-none"
-					/>
-				</label>
-				<label htmlFor="email" className="flex flex-col gap-1">
-					<span className="font-medium text-xl capitalize">email address</span>
-					<input
-						type="email"
-						id="email"
-						name="email"
-						value={form.email}
-						onChange={handleInput}
-						autoComplete="off"
-						className="!bg-neutral-100 border border-tertiary-900 text-neutral-200 rounded-lg px-5 py-3 outline-none"
-					/>
-				</label>
-				<label htmlFor="subject" className="flex flex-col gap-1">
-					<span className="font-medium text-xl capitalize">subject</span>
-					<input
-						type="text"
-						id="subject"
-						name="subject"
-						value={form.subject}
-						autoComplete="off"
-						onChange={handleInput}
-						className="!bg-neutral-100 border border-tertiary-900 text-neutral-200 rounded-lg px-5 py-3 outline-none"
-					/>
-				</label>
-				<label htmlFor="message" className="flex flex-col gap-1">
-					<span className="font-medium text-xl capitalize">message</span>
-					<textarea
-						id="message"
-						name="message"
-						value={form.message}
-						autoComplete="off"
-						onChange={handleInput}
-						className="!bg-neutral-100 border border-tertiary-900 text-neutral-200 rounded-lg px-5 py-3 outline-none min-h-44"
-					/>
-				</label>
-				<div className="flex justify-end w-full">
-					<button
-						disabled={!inputsValid}
-						className={`${
-							inputsValid ? 'bg-secondary-700' : 'bg-tertiary-300'
-						} font-bold font-merri-waether-sans text-xl text-neutral-100 capitalize px-16 py-2 border-2 border-tertiary-300 outline-none rounded-lg max-w-max mt-1 cursor-pointer`}
-					>
-						{loading ? <div className="loader"></div> : 'submit'}
-					</button>
-				</div>
-			</form>
-		</section>
+		<Wrapper>
+			<>
+				<h2 className="font-bold text-2.6xl mb-3 capitalize">Contact Me</h2>
+				<form onSubmit={handleSubmit} className="flex flex-col gap-6 mt-12">
+					<label htmlFor="name" className="flex flex-col gap-1">
+						<span className="font-medium text-xl capitalize">name</span>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							value={form.name}
+							autoComplete="off"
+							onChange={handleInput}
+							className="!bg-neutral-100 border border-tertiary-900 text-neutral-200 rounded-lg px-5 py-3 outline-none"
+						/>
+					</label>
+					<label htmlFor="email" className="flex flex-col gap-1">
+						<span className="font-medium text-xl capitalize">email address</span>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							value={form.email}
+							onChange={handleInput}
+							autoComplete="off"
+							className="!bg-neutral-100 border border-tertiary-900 text-neutral-200 rounded-lg px-5 py-3 outline-none"
+						/>
+					</label>
+					<label htmlFor="subject" className="flex flex-col gap-1">
+						<span className="font-medium text-xl capitalize">subject</span>
+						<input
+							type="text"
+							id="subject"
+							name="subject"
+							value={form.subject}
+							autoComplete="off"
+							onChange={handleInput}
+							className="!bg-neutral-100 border border-tertiary-900 text-neutral-200 rounded-lg px-5 py-3 outline-none"
+						/>
+					</label>
+					<label htmlFor="message" className="flex flex-col gap-1">
+						<span className="font-medium text-xl capitalize">message</span>
+						<textarea
+							id="message"
+							name="message"
+							value={form.message}
+							autoComplete="off"
+							onChange={handleInput}
+							className="!bg-neutral-100 border border-tertiary-900 text-neutral-200 rounded-lg px-5 py-3 outline-none min-h-44"
+						/>
+					</label>
+					<div className="flex justify-end w-full">
+						<button
+							disabled={!inputsValid}
+							className={`${
+								inputsValid ? 'bg-secondary-700' : 'bg-tertiary-300'
+							} font-bold font-merri-waether-sans text-xl text-neutral-100 capitalize px-16 py-2 border-2 border-tertiary-300 outline-none rounded-lg max-w-max mt-1 cursor-pointer`}
+						>
+							{loading ? <div className="loader"></div> : 'submit'}
+						</button>
+					</div>
+				</form>
+			</>
+		</Wrapper>
 	);
 };
 

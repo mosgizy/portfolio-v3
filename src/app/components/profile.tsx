@@ -1,14 +1,20 @@
 'use client';
 
 import { useStore } from '@/store/store';
-import { faEnvelope, faLocationArrow, faMobile } from '@fortawesome/free-solid-svg-icons';
+import {
+	faEnvelope,
+	faFileDownload,
+	faLocationArrow,
+	faMobile,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Profile = () => {
 	const { hamburger } = useStore();
+	const [download, setDownload] = useState(false);
 
 	useEffect(() => {
 		if (hamburger) {
@@ -52,18 +58,24 @@ const Profile = () => {
 							</Link>
 						</div>
 						<div className="bg-tertiary-400 px-5 py-4 rounded-xl mt-9 text-primary-300">
-							<div className="flex items-center gap-4 border-b border-black/10 pb-3 my-3">
+							<Link
+								href={'tel:+2348148801472'}
+								className="flex items-center gap-4 border-b border-black/10 pb-3 my-3"
+							>
 								<div className="bg-neutral-100 w-[35px] h-[35px] p-2 flex justify-center items-center rounded-sm">
 									<FontAwesomeIcon icon={faMobile} className="text-xl" />
 								</div>
 								<span className="font-medium text-[15px]">+234 8148801472</span>
-							</div>
-							<div className="flex items-center gap-4 border-b border-black/10 pb-3 my-3">
+							</Link>
+							<Link
+								href={'mailto:moshood521@gmail.com.com'}
+								className="flex items-center gap-4 border-b border-black/10 pb-3 my-3"
+							>
 								<div className="bg-neutral-100 w-[35px] h-[35px] p-2 flex justify-center items-center rounded-sm">
 									<FontAwesomeIcon icon={faEnvelope} className="text-xl" />
 								</div>
 								<span className="font-medium text-[15px]">moshood521@gmail.com</span>
-							</div>
+							</Link>
 							<div className="flex items-center gap-4 my-3">
 								<div className="bg-neutral-100 w-[35px] h-[35px] p-2 flex justify-center items-center rounded-sm">
 									<FontAwesomeIcon icon={faLocationArrow} className="text-xl" />
@@ -76,9 +88,11 @@ const Profile = () => {
 						<a
 							href="/Moshood_Odugbesan_Resume.pdf"
 							download
+							onMouseLeave={() => setDownload(false)}
+							onMouseOver={() => setDownload(true)}
 							className="font-bold font-merri-waether-sans text-xl px-6 py-2 bg-secondary-700 border-2 border-tertiary-300 outline-none rounded-lg max-w-max mx-auto mt-7 cursor-pointer"
 						>
-							View Resume
+							View Resume {download && <FontAwesomeIcon icon={faFileDownload} />}
 						</a>
 					</div>
 				</div>

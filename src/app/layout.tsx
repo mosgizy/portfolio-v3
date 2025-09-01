@@ -105,9 +105,9 @@ export default function RootLayout({
 				<Header />
 				<main className="flex gap-12 px-5 lg:px-6 pb-20 lg:pb-0 lg:max-w-[83vw] mx-auto mb-12">
 					<Profile />
-					<section className="flex-1 wrapper px-5 py-6 lg:px-8 lg:py-7 mt-4 lg:mt-0">
-						{children}
-					</section>
+
+					{children}
+
 					<NavBar />
 				</main>
 			</body>

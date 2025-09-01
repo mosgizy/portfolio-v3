@@ -60,9 +60,9 @@ const NavBar = () => {
 									pathname === info.route
 										? 'bg-secondary-100 text-neutral-100'
 										: 'bg-secondary-800 text-secondary-900'
-								} px-2 py-2 flex flex-col gap-1 items-center rounded-2xl md:rounded-full lg:rounded-sm`}
+								} hover:bg-secondary-100 hover:text-neutral-100 px-2 py-2 flex flex-col gap-1 items-center rounded-2xl md:rounded-full lg:rounded-sm`}
 							>
-								<FontAwesomeIcon icon={info.icon} className="text-2xl" />
+								<FontAwesomeIcon icon={info.icon} className="text-lg md:text-2xl" />
 								<span
 									className={`${
 										pathname === info.route && 'font-bold'
