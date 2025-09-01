@@ -4,8 +4,8 @@ import Wrapper from './components/wrapper';
 export default function Home() {
 	return (
 		<Wrapper>
-			<>
-				<h2 className="font-bold text-2.6xl mb-3 text-tertiary-700">About</h2>
+			<section className="text-neutral-200">
+				<h2 className="font-bold text-2.6xl mb-3">About</h2>
 				<article className="flex flex-col gap-6 text-justify">
 					<p>
 						I am a <span>Frontend Developer</span> with over 3 years of experience building
@@ -74,7 +74,7 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-			</>
+			</section>
 		</Wrapper>
 	);
 }

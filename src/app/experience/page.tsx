@@ -30,7 +30,7 @@ const Experience = () => {
 
 	return (
 		<Wrapper>
-			<section className="text-tertiary-700">
+			<section className="text-primary-400">
 				<h2 className="font-bold text-2.6xl mb-3">Experience</h2>
 				<div className="flex flex-col gap-6 text-base lg:text-lg mt-2">
 					{experiences.map((exp, index) => {
@@ -40,7 +40,7 @@ const Experience = () => {
 								href={link}
 								target="_blank"
 								key={index}
-								className="wrapper px-6 py-4 flex flex-col md:flex-row gap-5 text-tertiary-700 text-wrap"
+								className="wrapper px-6 py-4 flex flex-col md:flex-row gap-5 text-wrap"
 							>
 								<div className="block border-2 border-tertiary-300 max-h-max max-w-max rounded-lg overflow-hidden cursor-pointer">
 									<Image src={image} alt="caretrace" width={88} height={88} />

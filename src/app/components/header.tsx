@@ -1,16 +1,24 @@
 'use client';
 
 import { useStore } from '@/store/store';
-import { faHamburger, faMoon, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faHamburger, faLightbulb, faMoon, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useRef, useState } from 'react';
 
 const Header = () => {
-	const { setHamburger, hamburger } = useStore();
+	const { setHamburger, hamburger, darkMode, setDarkMode, userSetTheme, setUserSetTheme } =
+		useStore();
 	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 	const [active, setActive] = useState(false);
 	const boxRef = useRef<HTMLDivElement>(null);
 	const textRef = useRef<HTMLDivElement>(null);
+
+	const handleColorScheme = () => {
+		const mode = darkMode === 'dark' ? 'light' : 'dark';
+		document.documentElement.setAttribute('data-theme', mode);
+		setDarkMode(mode);
+		setUserSetTheme(true);
+	};
 
 	useEffect(() => {
 		if (boxRef.current && textRef.current) {
@@ -20,6 +28,22 @@ const Header = () => {
 			const centerY = rect.height / 2 - textRect.height / 2;
 			setMousePosition({ x: centerX, y: centerY });
 		}
+
+		if (userSetTheme) return;
+
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+		const mode = mediaQuery.matches ? 'dark' : 'light';
+
+		setDarkMode(mode);
+		document.documentElement.setAttribute('data-theme', mode);
+
+		const listener = (e: MediaQueryListEvent) => {
+			setDarkMode(mode);
+		};
+
+		mediaQuery.addEventListener('change', listener);
+
+		return () => mediaQuery.removeEventListener('change', listener);
 	}, []);
 
 	return (
@@ -72,8 +96,15 @@ const Header = () => {
 				</div>
 			</div>
 			<h1 className="font-sigma-one lg:hidden">Asterisk</h1>
-			<div className="w-[40px] h-[40px] lg:w-[59px] lg:h-[59px] rounded-full bg-secondary-100 flex justify-center items-center cursor-pointer">
-				<FontAwesomeIcon icon={faMoon} className="text-xl lg:text-3xl text-neutral-100" />
+			<div
+				onClick={handleColorScheme}
+				className="w-[40px] h-[40px] lg:w-[59px] lg:h-[59px] rounded-full bg-secondary-100 flex justify-center items-center cursor-pointer"
+			>
+				{darkMode === 'dark' ? (
+					<FontAwesomeIcon icon={faLightbulb} className="text-xl lg:text-3xl text-neutral-100" />
+				) : (
+					<FontAwesomeIcon icon={faMoon} className="text-xl lg:text-3xl text-neutral-100" />
+				)}
 			</div>
 		</header>
 	);
