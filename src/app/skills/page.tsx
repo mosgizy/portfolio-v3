@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Wrapper from '../components/wrapper';
+import * as motion from 'motion/react-client';
 
 const Skills = () => {
 	const skills = [
@@ -53,12 +54,22 @@ const Skills = () => {
 					{skills.map((skill, index) => {
 						const { image, title } = skill;
 						return (
-							<div key={index} className="max-w-max">
+							<motion.div
+								whileHover={{
+									y: [0, -15, 0],
+									transition: {
+										duration: 0.5,
+										ease: 'easeInOut',
+									},
+								}}
+								key={index}
+								className="max-w-max"
+							>
 								<div className="border border-tertiary-300 max-w-max mx-auto rounded-lg p-3 shadow-[0px_0px_5.5px_1px_#EFE0B2]">
 									<Image src={image} alt={title} width={60} height={60} className="h-16 w-16" />
 								</div>
 								<p className="text-lg text-center font-medium capitalize mt-1">{title}</p>
-							</div>
+							</motion.div>
 						);
 					})}
 				</div>
@@ -67,12 +78,22 @@ const Skills = () => {
 					{tools.map((tool, index) => {
 						const { image, title } = tool;
 						return (
-							<div key={index} className="max-w-max">
+							<motion.div
+								whileHover={{
+									y: [0, -15, 0],
+									transition: {
+										duration: 0.5,
+										ease: 'easeInOut',
+									},
+								}}
+								key={index}
+								className="max-w-max"
+							>
 								<div className="border border-tertiary-300 max-w-max mx-auto rounded-lg p-3 shadow-[0px_0px_5.5px_1px_#EFE0B2]">
 									<Image src={image} alt={title} width={60} height={60} className="h-16 w-16" />
 								</div>
 								<p className="text-lg text-center font-medium capitalize mt-1">{title}</p>
-							</div>
+							</motion.div>
 						);
 					})}
 				</div>
