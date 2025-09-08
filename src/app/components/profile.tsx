@@ -6,6 +6,7 @@ import {
 	faFileDownload,
 	faLocationArrow,
 	faMobile,
+	faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
@@ -13,7 +14,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 const Profile = () => {
-	const { hamburger } = useStore();
+	const { hamburger, setHamburger } = useStore();
 	const [download, setDownload] = useState(false);
 
 	useEffect(() => {
@@ -27,10 +28,13 @@ const Profile = () => {
 	return (
 		<div
 			className={` ${
-				hamburger ? 'translate-x-0' : '-translate-x-full'
-			} absolute z-40 top-12 lg:top-0 inset-0 lg:bg-none lg:relative font-inter lg:translate-x-0 transition delay-150 duration-200 ease-in-out`}
+				hamburger ? 'translate-y-0' : 'translate-y-full'
+			} bg-bg md:bg-transparent absolute z-40 md:top-12 lg:top-0 inset-0 lg:bg-none lg:relative font-inter md:translate-y-0 transition delay-150 duration-200 ease-in-out`}
 		>
-			<aside className="mt-26 relative text-primary-300">
+			<div className="p-5 md:hidden" onClick={() => setHamburger()}>
+				<FontAwesomeIcon icon={faXmark} className="text-xl text-primary-200 cursor-pointer" />
+			</div>
+			<aside className="mt-20 md:mt-26 relative text-primary-300">
 				<div className="max-w-[90%] mx-auto lg:max-w-full bg-neutral-100 border-3 border-tertiary-300 rounded-xl p-8">
 					<div className="flex justify-center absolute -top-16 w-full left-0">
 						<Image src="/images/avatar.png" alt="avatar" width={200} height={200} />
@@ -48,7 +52,6 @@ const Profile = () => {
 								target="_blank"
 							>
 								<Image src="/icons/github.png" alt="" width={34} height={34} />
-								{/* <FontAwesomeIcon icon={faGithub} /> */}
 							</Link>
 							<Link
 								href={'https://www.linkedin.com/in/hasterisk'}

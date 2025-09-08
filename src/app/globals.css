@@ -62,6 +62,8 @@
 	--color-tertiary-800: var(--tertiary-800);
 	--color-tertiary-900: var(--tertiary-900);
 
+	--color-bg: var(--background);
+
 	--color-neutral-100: var(--neutral-100);
 	--color-neutral-200: var(--neutral-200);
 

@@ -1,13 +1,12 @@
 'use client';
 
 import { useStore } from '@/store/store';
-import { faHamburger, faLightbulb, faMoon, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faHamburger, faLightbulb, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useRef, useState } from 'react';
 
 const Header = () => {
-	const { setHamburger, hamburger, darkMode, setDarkMode, userSetTheme, setUserSetTheme } =
-		useStore();
+	const { setHamburger, darkMode, setDarkMode, userSetTheme, setUserSetTheme } = useStore();
 	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 	const [active, setActive] = useState(false);
 	const boxRef = useRef<HTMLDivElement>(null);
@@ -52,7 +51,7 @@ const Header = () => {
 				<div className="lg:hidden">
 					<FontAwesomeIcon
 						onClick={() => setHamburger()}
-						icon={hamburger ? faXmark : faHamburger}
+						icon={faHamburger}
 						className="cursor-pointer"
 					/>
 				</div>
