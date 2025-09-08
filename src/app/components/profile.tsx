@@ -28,7 +28,7 @@ const Profile = () => {
 	return (
 		<div
 			className={` ${
-				hamburger ? 'translate-y-0' : 'translate-y-full'
+				hamburger ? 'translate-y-0' : '-translate-y-full'
 			} bg-bg md:bg-transparent absolute z-40 md:top-12 lg:top-0 inset-0 lg:bg-none lg:relative font-inter md:translate-y-0 transition delay-150 duration-200 ease-in-out`}
 		>
 			<div className="p-5 md:hidden" onClick={() => setHamburger()}>
