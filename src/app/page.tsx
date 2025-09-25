@@ -43,7 +43,7 @@ export default function Home() {
 					</p>
 				</article>
 				<h2 className="font-bold text-2.6xl capitalize mt-6 text-tertiary-700">What i do</h2>
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4">
+				<div className="grid grid-cols-1 2xl:grid-cols-2 gap-8 mt-4">
 					<div className="bg-tertiary-500 border-3 border-tertiary-600 rounded-lg overflow-hidden flex gap-5">
 						<Image src="/images/frontend.png" alt="frontend" width={116} height={311} />
 						<div className="py-4">

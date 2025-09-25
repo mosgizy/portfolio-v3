@@ -71,7 +71,7 @@ const Header = () => {
 	}, []);
 
 	return (
-		<header className="flex items-center justify-between text-primary-200 text-2xl lg:text-[38px] py-6 px-4 lg:py-12 w-full lg:max-w-[65%] mx-auto">
+		<header className="flex items-center justify-between text-primary-200 text-2xl lg:text-[38px] py-6 px-4 lg:py-12 w-full lg:max-w-[75%] mx-auto">
 			<div className="flex gap-4 items-center">
 				<div className="lg:hidden">
 					<FontAwesomeIcon

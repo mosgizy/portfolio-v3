@@ -29,13 +29,13 @@ const Profile = () => {
 		<div
 			className={` ${
 				hamburger ? 'translate-y-0' : '-translate-y-full'
-			} bg-bg md:bg-transparent absolute z-40 md:top-12 lg:top-0 inset-0 lg:bg-none lg:relative font-inter md:translate-y-0 transition delay-150 duration-200 ease-in-out`}
+			} bg-bg absolute z-40 lg:top-0 inset-0 lg:bg-transparent lg:z-0 lg:relative font-inter -translate-y-full lg:translate-y-0 transition delay-150 duration-200 ease-in-out`}
 		>
-			<div className="p-5 md:hidden" onClick={() => setHamburger()}>
+			<div className="p-8 md:p-10 lg:hidden" onClick={() => setHamburger()}>
 				<FontAwesomeIcon icon={faXmark} className="text-xl text-primary-200 cursor-pointer" />
 			</div>
 			<aside className="mt-20 md:mt-26 relative text-primary-300">
-				<div className="max-w-[90%] mx-auto lg:max-w-full bg-neutral-100 border-3 border-tertiary-300 rounded-xl p-8">
+				<div className="max-w-[90%] mx-auto xl:max-w-full bg-neutral-100 border-3 border-tertiary-300 rounded-xl p-8">
 					<div className="flex justify-center absolute -top-16 w-full left-0">
 						<Image src="/images/avatar.png" alt="avatar" width={200} height={200} />
 					</div>

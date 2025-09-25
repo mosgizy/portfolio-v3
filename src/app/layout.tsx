@@ -103,7 +103,7 @@ export default function RootLayout({
 				className={`${sigmaOne.variable} ${poppins.variable} ${inter.variable} ${merriWeatherSans.variable} antialiased bg-background`}
 			>
 				<Header />
-				<main className="flex gap-12 px-5 lg:px-6 pb-20 lg:pb-0 lg:max-w-[83vw] mx-auto mb-12">
+				<main className="flex gap-8 xl:gap-12 px-5 lg:px-6 pb-20 lg:pb-28 xl:max-w-[90vw] mx-auto mb-12">
 					<Profile />
 
 					{children}

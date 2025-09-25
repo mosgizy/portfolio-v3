@@ -46,9 +46,9 @@ const NavBar = () => {
 	const { setHamburger } = useStore();
 
 	return (
-		<nav className="fixed z-30 bottom-0 left-0 lg:relative font-poppins w-full lg:w-auto">
+		<nav className="fixed z-30 bottom-0 left-0 xl:relative font-poppins w-full xl:w-auto">
 			<ul
-				className={`bg-neutral-100 border-t-3 border-tertiary-300 lg:border-3 lg:border-tertiary-300 rounded-t-4xl lg:rounded-xl max-h-max lg:mt-36 px-4 py-6 lg:px-6 lg:py-7 grid grid-cols-5 lg:grid-cols-1 gap-3 md:gap-5`}
+				className={`bg-neutral-100 border-t-3 border-tertiary-300 xl:border-3 xl:border-tertiary-300 rounded-t-4xl xl:rounded-xl max-h-max xl:mt-36 px-4 py-6 lg:px-6 xl:py-7 grid grid-cols-5 xl:grid-cols-1 gap-3 md:gap-5`}
 			>
 				{navInfo.map((info) => {
 					return (
