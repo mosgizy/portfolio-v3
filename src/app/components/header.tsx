@@ -3,14 +3,14 @@
 import { useStore } from '@/store/store';
 import { faHamburger, faLightbulb, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { motion, useMotionTemplate, useMotionValue, useSpring } from 'motion/react';
+
+const ROTATION_RANGE = 62.5;
+const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
 
 const Header = () => {
 	const { setHamburger, darkMode, setDarkMode, userSetTheme, setUserSetTheme } = useStore();
-	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-	const [active, setActive] = useState(false);
-	const boxRef = useRef<HTMLDivElement>(null);
-	const textRef = useRef<HTMLDivElement>(null);
 
 	const handleColorScheme = () => {
 		const mode = darkMode === 'dark' ? 'light' : 'dark';
@@ -19,15 +19,40 @@ const Header = () => {
 		setUserSetTheme(true);
 	};
 
-	useEffect(() => {
-		if (boxRef.current && textRef.current) {
-			const rect = boxRef.current.getBoundingClientRect();
-			const textRect = textRef.current.getBoundingClientRect();
-			const centerX = rect.width / 2 - textRect.width / 2;
-			const centerY = rect.height / 2 - textRect.height / 2;
-			setMousePosition({ x: centerX, y: centerY });
-		}
+	const ref = useRef<HTMLDivElement | null>(null);
 
+	const x = useMotionValue(0);
+	const y = useMotionValue(0);
+
+	const xSpring = useSpring(x);
+	const ySpring = useSpring(y);
+
+	const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
+
+	const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+		if (!ref.current) return [0, 0];
+
+		const rect = ref.current.getBoundingClientRect();
+
+		const width = rect.width;
+		const height = rect.height;
+
+		const mouseX = (e.clientX - rect.left) * ROTATION_RANGE;
+		const mouseY = (e.clientY - rect.top) * ROTATION_RANGE;
+
+		const rX = (mouseY / height - HALF_ROTATION_RANGE) * -1;
+		const rY = mouseX / width - HALF_ROTATION_RANGE;
+
+		x.set(rX);
+		y.set(rY);
+	};
+
+	const handleMouseLeave = () => {
+		x.set(0);
+		y.set(0);
+	};
+
+	useEffect(() => {
 		if (userSetTheme) return;
 
 		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -55,44 +80,22 @@ const Header = () => {
 						className="cursor-pointer"
 					/>
 				</div>
-				<div
-					ref={boxRef}
+				<motion.div
+					ref={ref}
+					onMouseMove={handleMouseMove}
+					onMouseLeave={handleMouseLeave}
+					style={{
+						transformStyle: 'preserve-3d',
+						transform,
+					}}
 					className="hidden relative lg:flex justify-center items-center w-[300px] h-[70px] overflow-hidden"
 				>
 					<h1
-						ref={textRef}
-						onMouseEnter={() => setActive(true)}
-						onMouseLeave={() => {
-							setActive(false);
-
-							setMousePosition({ x: 0, y: 0 });
-						}}
-						onMouseMove={(e) => {
-							if (active && boxRef.current && textRef.current) {
-								const rect = boxRef.current.getBoundingClientRect();
-								const textRect = textRef.current.getBoundingClientRect();
-
-								let x = e.clientX - rect.left - textRect.width / 2;
-								let y = e.clientY - rect.top - textRect.height / 2;
-
-								const margin = 8;
-
-								x = Math.max(margin, Math.min(x, rect.width - textRect.width - margin));
-								y = Math.max(margin, Math.min(y, rect.height - textRect.height - margin));
-
-								setMousePosition({ x, y });
-							}
-						}}
-						style={{
-							transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-						}}
-						className={`absolute font-sigma-one transition-all duration-200 cursor-none ${
-							active ? 'bg-secondary-700 rounded-3xl px-6' : ''
-						}`}
+						className={`absolute font-sigma-one transition-all duration-200 cursor-none hover:bg-secondary-700 rounded-3xl px-6`}
 					>
 						Asterisk
 					</h1>
-				</div>
+				</motion.div>
 			</div>
 			<h1 className="font-sigma-one lg:hidden">Asterisk</h1>
 			<div
