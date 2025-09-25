@@ -24,7 +24,6 @@ A personal portfolio website built with **Next.js + Tailwind CSS** to showcase m
 ```bash
 git clone https://github.com/mosgizy/portfolio-v3.git
 cd portfolio-v3
-
 ```
 
 ### 2. install dependencies

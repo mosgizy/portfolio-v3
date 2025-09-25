@@ -10,7 +10,11 @@ const Projects = () => {
 			title: 'user dashboard',
 			link: 'https://user-dashboard-lyart-chi.vercel.app/dashboard',
 		},
-
+		{
+			image: '/images/nft-marketplace.png',
+			title: 'NFT marketplace',
+			link: 'https://nft-marketplace-cyan-mu.vercel.app/',
+		},
 		{
 			image: '/images/portfolio.png',
 			title: 'portfolio v2',
@@ -26,11 +30,6 @@ const Projects = () => {
 			title: 'laundry service',
 			link: 'https://fabulous-laundry.vercel.app/',
 		},
-		// {
-		// 	image: '/images/skvllpvnk.png',
-		// 	title: 'skvllPvnkz',
-		// 	link: 'https://skvllpvnkz.com',
-		// },
 	];
 
 	return (
