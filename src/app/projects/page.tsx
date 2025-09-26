@@ -51,7 +51,7 @@ const Projects = () => {
 										alt={title}
 										width={920}
 										height={177}
-										className="rounded-sm w-full md:h-[380px] lg:h-[300px]"
+										className="rounded-sm w-full md:h-[380px] lg:h-[250px]"
 									/>
 									<div className="text-lg font-bold text-neutral-200 mt-3 capitalize">{title}</div>
 								</Link>
