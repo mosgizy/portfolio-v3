@@ -16,6 +16,11 @@ const Projects = () => {
 			link: 'https://nft-marketplace-cyan-mu.vercel.app/',
 		},
 		{
+			image: '/images/distinction.png',
+			title: 'Distinction Landing Page',
+			link: 'https://distinction-gele.vercel.app/',
+		},
+		{
 			image: '/images/get-linked.png',
 			title: 'Get Linked',
 			link: 'https://get-linked-eta-snowy.vercel.app/',
