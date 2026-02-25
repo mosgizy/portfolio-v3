@@ -89,7 +89,6 @@ export const metadata: Metadata = {
 		apple: '/pwa-icons/icon-180x180.png',
 	},
 	manifest: './manifest.ts',
-	themeColor: '#625839',
 };
 
 export default function RootLayout({

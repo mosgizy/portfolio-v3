@@ -61,7 +61,7 @@ const Header = () => {
 		setDarkMode(mode);
 		document.documentElement.setAttribute('data-theme', mode);
 
-		const listener = (e: MediaQueryListEvent) => {
+		const listener = () => {
 			setDarkMode(mode);
 		};
 
