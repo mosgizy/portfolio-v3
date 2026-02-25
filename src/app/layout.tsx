@@ -6,6 +6,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import Header from './components/header';
 import Profile from './components/profile';
 import NavBar from './components/nav';
+import { Analytics } from '@vercel/analytics/next';
 
 config.autoAddCss = false;
 
@@ -106,7 +107,7 @@ export default function RootLayout({
 					<Profile />
 
 					{children}
-
+					<Analytics />
 					<NavBar />
 				</main>
 			</body>
