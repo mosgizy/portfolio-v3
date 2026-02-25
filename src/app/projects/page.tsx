@@ -6,6 +6,11 @@ import Wrapper from '../components/wrapper';
 const Projects = () => {
 	const projects = [
 		{
+			image: '/images/vekta-it.png',
+			title: 'Vekta IT',
+			link: 'https://vektait.com',
+		},
+		{
 			image: '/images/dashboard.png',
 			title: 'user dashboard',
 			link: 'https://user-dashboard-lyart-chi.vercel.app/dashboard',
