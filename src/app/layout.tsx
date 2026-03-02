@@ -7,6 +7,7 @@ import Header from './components/header';
 import Profile from './components/profile';
 import NavBar from './components/nav';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 config.autoAddCss = false;
 
@@ -107,8 +108,9 @@ export default function RootLayout({
 					<Profile />
 
 					{children}
-					<Analytics />
 					<NavBar />
+					<Analytics />
+					<SpeedInsights />
 				</main>
 			</body>
 		</html>
